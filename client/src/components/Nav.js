@@ -12,7 +12,8 @@ export const Nav = () => {
 
     return(
         <nav className="navbar">
-            <h1 className="nav-title">Women's Soccer Players</h1>
+            <h1 className="nav-title">Womens Soccer Players</h1>
+            <h2>this is another test</h2>
             <button onClick={toggle} className="btn">Change</button>
         </nav>
     )
