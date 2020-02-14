@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from "axios";
 import './App.css';
 
+import PlayerCard from "./components/PlayerCard"
+
 class App extends Component {
 
   constructor(){
@@ -16,11 +18,10 @@ class App extends Component {
     .then(res => {
       console.log(res.data);
       console.table(res.data);
-      // this.setState({players: res.data})
-      // console.log(this.state.players)
+      this.setState({players: res.data})
     })
     .catch(err => {
-      console.log(err, "Dat aint right boi")
+      console.log(err, "This is not the data")
     })
   }
 
@@ -28,7 +29,9 @@ class App extends Component {
     return (
       <div className ="App">
         <div className="container">
-        
+        {this.state.players.map(player => (
+          <PlayerCard key={player.id} player={player}/>
+        ))}
         </div>
       </div>
     );
